@@ -11,6 +11,8 @@ end_date = '2016-12-31'
 
 panel_data = data.DataReader(tickers, 'yahoo', start_date, end_date)
 
+# print(panel_data.head(10))
+
 # print(panel_data.__dict__)
 # print (dir(panel_data))
 
@@ -33,7 +35,7 @@ close = close.reindex(all_weekdays)
 close = close.fillna(method='ffill')
 
 # print(all_weekdays)
-# print(close.head(10))
+print(close.head(10))
 # print(close.describe())
 
 # Get the MSFT timeseries. This now returns a Pandas Series object indexed by date.
@@ -54,4 +56,4 @@ ax.set_xlabel('Date')
 ax.set_ylabel('Adjusted closing price ($)')
 ax.legend()
 
-plt.show()
+# plt.show()
